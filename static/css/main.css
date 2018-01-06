@@ -1,0 +1,59 @@
+body p {
+    font-size: 2em;
+    color: rgb(92, 175, 99);
+}
+
+button {
+    border-width: 0px;
+    padding: 3px 8px 3px 8px;
+    border-radius: 5px;
+}
+
+
+.ok {
+    color: white;
+    background-color: rgb(51, 189, 51);
+    border-color: rgb(51,189,51);
+}
+
+.ok:hover {
+    background-color: rgb(38, 95, 38)
+}
+
+.ok:active {
+    background-color: black;
+}
+
+.cancel {
+    color: white;
+    background-color: rgb(226, 64, 24);
+    border-color: rgb(226, 64, 24);
+}
+
+.cancel:hover {
+    background-color: rgb(143, 58, 19)
+}
+
+.cancel:active {
+    background-color: black;
+}
+#buttonContainer {
+    /*background-color: blue;*/
+    /*text-align: center;*/
+}
+
+#buttonContainer > button {
+   /*width: 100px;*/
+   width: 10%;
+   min-width: 100px;
+   /*margin: auto auto;*/
+}
+
+input[type=text], input[type=password] {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    /*display: inline-block;*/
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}

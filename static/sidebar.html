@@ -1,0 +1,106 @@
+<!doctype html> 
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/sidebar.css">
+    <script src='script/sidebar.js'></script>
+</head>
+<body>
+    <div id='sidebar-base-containier'></div>
+    <div id='content-container'>Das ist ein Test</div>
+    <div id='sidebar-container' style='display: none;'>
+        <div id='sidebar-left-container'>
+            <div id='sidebar-left-panel_1' class='sidebar-left-panel' onclick='onLeftBlockChanged(event,"sidebar-right_1")'><img src="icons/home_16x16.png" title="This is the HOME"></img><div>HOME</div></div>
+            <div id='sidebar-left-panel_2' class='sidebar-left-panel sidebar-left-panel-selected' onclick='onLeftBlockChanged(event,"sidebar-right_2")'><img src="icons/international.png" 
+                title="This is the International Menu"></img><div>INT</div></div>
+            <div id='sidebar-left-panel_3' class='sidebar-left-panel' onclick='onLeftBlockChanged(event,"sidebar-right_3")'><img src="icons/faq_16x16.png" 
+                title="FAQ"></img><div>FAQ</div></div>
+            <div id='sidebar-left-panel_1' class='sidebar-left-panel' onclick='onLeftBlockChanged(event,"sidebar-right_1")'><img src="icons/home_16x16.png" title="This is the HOME"></img><div>HOME</div></div>
+            <div id='sidebar-left-panel_2' class='sidebar-left-panel' onclick='onLeftBlockChanged(event,"sidebar-right_2")'><img src="icons/international.png" 
+                title="This is the International Menu"></img><div>INT</div></div>
+            <div id='sidebar-left-panel_3' class='sidebar-left-panel' onclick='onLeftBlockChanged(event,"sidebar-right_3")'><img src="icons/faq_16x16.png" 
+                title="FAQ"></img><div>FAQ</div></div>
+        </div>
+        <div id='sidebar-right-container'>
+            <div id='sidebar-right_1' class='sidebar-right-panel'>
+                <div class='sidebar-right-panel-box-header' onclick='onRightPanelHeaderChanged(event)'>
+                    <div class='arrow-up'></div>
+                    <div>OPENED SCREENS</div>
+                </div>
+                <div class='sidebar-right-panel-box  sidebar-right-panel-box-max'>
+                    <div class='sidebar-right-panel-box-item'>Liquiplanung<span class='sidebar-right-panel-box-item-counter'>17</span></div>
+                    <div class='sidebar-right-panel-box-item'>Kontenabgleich</div>
+                    <div class='sidebar-right-panel-box-item'>Cash Position<span class='sidebar-right-panel-box-item-counter'>3</span><span class='sidebar-right-panel-box-item-counter'>18</span></div>
+                    <div class='sidebar-right-panel-box-item'>Kontoauszüge</div>
+                    <div class='sidebar-right-panel-box-item'>Kontierung</div>
+                    <div class='sidebar-right-panel-box-item'>Netting</div>
+                    <div class='sidebar-right-panel-box-item'>Liquiplanung</div>
+                </div>
+                <div class='sidebar-right-panel-box-header' onclick='onRightPanelHeaderChanged(event)'>
+                    <div class='arrow-up'></div>
+                    <div>CASH MANAGEMENT</div>
+                </div>
+                <div class='sidebar-right-panel-box '>
+                    <div class='sidebar-right-panel-box-item'>Kontenabgleich</div>
+                    <div class='sidebar-right-panel-box-item'>Cash Position</div>
+                    <div class='sidebar-right-panel-box-item'>Kontoauszüge</div>
+                </div>
+                <div class='sidebar-right-panel-box-header' onclick='onRightPanelHeaderChanged(event)'>
+                    <div class='arrow-up'></div>
+                    <div>FOREIGN EXCHANGE</div>
+                </div>
+                <div class='sidebar-right-panel-box'>
+                    <div class='sidebar-right-panel-box-item'>Cash Position</div>
+                    <div class='sidebar-right-panel-box-item'>Kontoauszüge</div>
+                    <div class='sidebar-right-panel-box-item'>Kontierung</div>
+                    <div class='sidebar-right-panel-box-item'>Netting</div>
+                    <div class='sidebar-right-panel-box-item'>Liquiplanung</div>
+                    <div class='sidebar-right-panel-box-item'>Kontenabgleich</div>
+                    <div class='sidebar-right-panel-box-item'>Cash Position</div>
+                    <div class='sidebar-right-panel-box-item'>Kontoauszüge</div>
+                    <div class='sidebar-right-panel-box-item'>Kontierung</div>
+                    <div class='sidebar-right-panel-box-item'>Netting</div>
+                    <div class='sidebar-right-panel-box-item'>Liquiplanung</div>
+                </div>
+            </div>
+            <div id='sidebar-right_2' class='sidebar-right-panel sidebar-right-panel-selected'>
+                <div class='sidebar-right-panel-box-header' onclick='onRightPanelHeaderChanged(event)'>
+                    <div class='arrow-up'></div>
+                    <div>TREASURY</div>
+                </div>
+                <div class='sidebar-right-panel-box  sidebar-right-panel-box-max'>
+                    <div class='sidebar-right-panel-box-item'>Liquiplanung<span class='sidebar-right-panel-box-item-counter'>17</span></div>
+                    <div class='sidebar-right-panel-box-item'>Kontenabgleich</div>
+                    <div class='sidebar-right-panel-box-item'>Cash Position<span class='sidebar-right-panel-box-item-counter sidebar-right-panel-box-item-counter-yellow'>3</span><span class='sidebar-right-panel-box-item-counter'>18</span></div>
+                </div>
+                <div class='sidebar-right-panel-box-header' onclick='onRightPanelHeaderChanged(event)'>
+                    <div class='arrow-up'></div>
+                    <div>ADMINISTRATION</div>
+                </div>
+                <div class='sidebar-right-panel-box '>
+                    <div class='sidebar-right-panel-box-item'>Kontenabgleich</div>
+                    <div class='sidebar-right-panel-box-item'>Cash Position</div>
+                </div>
+                <div class='sidebar-right-panel-box-header' onclick='onRightPanelHeaderChanged(event)'>
+                    <div class='arrow-up'></div>
+                    <div>ANYTHING ELSE</div>
+                </div>
+                <div class='sidebar-right-panel-box'>
+                    <div class='sidebar-right-panel-box-item'>Cash Position</div>
+                    <div class='sidebar-right-panel-box-item'>Kontoauszüge</div>
+                    <div class='sidebar-right-panel-box-item'>Kontierung</div>
+                    <div class='sidebar-right-panel-box-item'>Netting</div>
+                </div>
+            </div>
+            <div id='sidebar-right_3' class='sidebar-right-panel'>
+                <div class='sidebar-right-panel-box-header' onclick='onRightPanelHeaderChanged(event)'>
+                    <div class='arrow-up'></div>
+                    <div>by Martin Paar</div>
+                </div>
+                <div class='sidebar-right-panel-box'>
+                    <div class='sidebar-right-panel-box-item'>Sidepanel<span class='sidebar-right-panel-box-item-counter sidebar-right-panel-box-item-counter-yellow'>1</span></div>
+                    <div class='sidebar-right-panel-box-item'>Test</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
