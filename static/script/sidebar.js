@@ -175,8 +175,10 @@ var Sidebar=(function () {
             if (this.sidebarRightContainer.style.display!=='block') {
                 this.sidebarRightContainer.style.display='block';
             }
+            this.sidebarContainer.className=this.sidebarContainer.className.replace(' sidebar-container-closed','');
             //this.sidebarLeftContainerMenueArrowElement.className='arrow-left';
         } else {
+            this.sidebarContainer.className+=' sidebar-container-closed';
             this.sidebarRightContainer.style.display='none';
             //this.sidebarLeftContainerMenueArrowElement.className='arrow-right';
         }
