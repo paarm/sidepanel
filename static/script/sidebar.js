@@ -186,26 +186,26 @@ var Sidebar=(function () {
  
     Sidebar.prototype.initWithObject=function(initObject) {
         if (initObject && initObject.panels && Array.isArray(initObject.panels)) {
-            initObject.panels.forEach(element=> {
+            initObject.panels.forEach(function(element) {
                 var panel=this.addPanel(element.externid, element.iconPath, element.label);
                 if (element.boxes && Array.isArray(element.boxes)) {
-                    element.boxes.forEach(element=> {
+                    element.boxes.forEach(function(element) {
                         var box=panel.addBox(element.externid, element.open, element.label);
                         if (element.items && Array.isArray(element.items)) {
-                            element.items.forEach(element=> {
+                            element.items.forEach(function(element) {
                                 var item=box.addBoxItem(element.externid, element.label);
                                 if (element.counter && element.counter!=0) {
                                     if (element.counter && Array.isArray(element.counter)) {
-                                        element.counter.forEach(element=>{
+                                        element.counter.forEach(function(element) {
                                             item.setCounter(element.name, element.count, element.tooltipText);
-                                        });
+                                        },this);
                                     }
                                 }
-                            })
+                            },this)
                         }
-                    });
+                    },this);
                 }
-            });
+            },this);
         }
     }
 
@@ -243,49 +243,49 @@ var Sidebar=(function () {
 
     Sidebar.prototype.searchPanel=function(externid) {
         var found=null;
-        this.panels.forEach(elements=> {
+        this.panels.forEach(function(element) {
             if (found==null) {
-                if (elements.externid===externid) {
-                    found=elements;
+                if (element.externid===externid) {
+                    found=element;
                 }
             }
-        });
+        },this);
         return found;
     }
 
     Sidebar.prototype.searchPanelBox=function(externid) {
         var found=null;
-        this.panels.forEach(elements=> {
+        this.panels.forEach(function(element) {
             if (found==null) {
-                elements.boxes.forEach(elements=>{
+                element.boxes.forEach(function(element) {
                     if (found==null) {
-                        if (elements.externid===externid) {
-                            found=elements;
+                        if (element.externid===externid) {
+                            found=element;
                         }
                     }
-                });
+                },this);
             }
-        });
+        },this);
         return found;
     }
 
     Sidebar.prototype.searchPanelBoxItem=function(externid) {
         var found=null;
-        this.panels.forEach(elements=> {
+        this.panels.forEach(function(element) {
             if (found==null) {
-                elements.boxes.forEach(elements=>{
+                element.boxes.forEach(function(element) {
                     if (found==null) {
-                        elements.boxItems.forEach(elements=>{
+                        element.boxItems.forEach(function(element) {
                             if (found==null) {
-                                if (elements.externid===externid) {
-                                    found=elements;
+                                if (element.externid===externid) {
+                                    found=element;
                                 }
                             }
-                        });
+                        },this);
                     }
-                });
+                },this);
             }
-        });
+        },this);
         return found;
     }
 
@@ -468,38 +468,4 @@ window.onload=function(ev) {
             boxTreasury.addBoxItem('questioni'+x, 'Question_'+x);
         }
     } */   
-}
-
-function onLeftBlockChanged(event, sidebar_right_id) {
-    var elements=document.getElementsByClassName('sidebar-left-panel');
-    for (var i=0;i<elements.length;i++) {
-        elements[i].className=elements[i].className.replace(' sidebar-left-panel-selected', '');
-    }
-    var elements=document.getElementsByClassName('sidebar-right-panel-selected');
-    for (var i=0;i<elements.length;i++) {
-        elements[i].className=elements[i].className.replace(' sidebar-right-panel-selected', '');
-    }
-    event.currentTarget.className+=" sidebar-left-panel-selected";
-    var element=document.getElementById(sidebar_right_id);
-    if (element) {
-        element.className+=' sidebar-right-panel-selected';
-    }
-}
-
-function onRightPanelHeaderChanged(event) {
-    var v=event.currentTarget.nextElementSibling;
-    if (v.className.indexOf(' sidebar-right-panel-closed')!=-1) {
-        v.className=v.className.replace(' sidebar-right-panel-closed', '');
-    } else {
-        v.className+=' sidebar-right-panel-closed';
-    }
-    v=event.currentTarget.firstElementChild;
-    if (v.className.indexOf('arrow-up')!=-1) {
-        v.className=v.className.replace('arrow-up', 'arrow-down');
-    } else {
-        v.className=v.className.replace('arrow-down', 'arrow-up');
-    }
-    //console.debug(v);
-    //event.currentTarget.className+=" sidebar-left-panel-selected";
-    
 }
